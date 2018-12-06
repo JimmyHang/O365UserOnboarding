@@ -102,7 +102,7 @@ if($employment -eq "New"){
 elseIf($employment -eq "Terminated"){
     $user = Get-ADUser -Identity $Input.FirstName
     Disable-ADAccount -Identity $user
-    Move-ADObject -Identity $user.ObjectGUID -TargetPath "OU=Terminated,OU=Hangconsult Users,DC=hangconsult,DC=net"
+    Move-ADObject -Identity $user.ObjectGUID -TargetPath "OU=Terminated,OU=OU,DC=domain,DC=net"
     Write-Output "User Account Disabled"
 
 }
